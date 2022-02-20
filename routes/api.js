@@ -2715,70 +2715,13 @@ router.get('/game/asahotak', async (req, res, next) => {
 })
 
 // photooxy
-router.get('/textpro/logo-wolf', async(req, res, next) => {
-
-  const apikey = req.query.apikey;
-
-  const text = req.query.text;
-  const text2 = req.query.text2;
-  
-  if(!apikey) return res.json(loghandler.notparam)
-  if(!text) return res.json(loghandler.nottext)
-  if(!text2) return res.json(loghandler.nottext2)
-  
-  if(listkey.includes(apikey)){
-    zrapi 
-  .textpro("https://textpro.me/create-wolf-logo-black-white-937.html", [
-    text, text2
-  ])
-  .then((data) => {
-    res.json({
-      status: true,
-      code: 200,
-      creator: `${creator}`,
-      result: data
-    })
-  })
-  .catch((err) => console.log(err));
-  } else {
-    res.json(loghandler.invalidKey)
-  }
-});
-
-router.get('/textpro/natural-leaves', async(req, res, next) => {
-
-  const apikey = req.query.apikey;
-
-  const text = req.query.text;
-  
-  if(!apikey) return res.json(loghandler.notparam)
-  if(!text) return res.json(loghandler.nottext)
-  
-  if(listkey.includes(apikey)){
-    zrapi 
-  .textpro("https://textpro.me/natural-leaves-text-effect-931.html", [
-    text,
-  ])
-  .then((data) => {
-    res.json({
-      status: true,
-      code: 200,
-      creator: `${creator}`,
-      result: data
-    })
-  })
-  .catch((err) => console.log(err));
-  } else {
-    res.json(loghandler.invalidKey)
-  }
-});
 
 router.get('/textpro/logo-wolf2', async(req, res, next) => {
 
-  const apikey = req.query.apikey;
+  const apikey = req.query.apikey,
 
-  const text = req.query.text;
-  const text2 = req.query.text2;
+  const text = req.query.text,
+  const text2 = req.query.text2
   
   if(!apikey) return res.json(loghandler.notparam)
   if(!text) return res.json(loghandler.nottext)
@@ -2789,19 +2732,19 @@ router.get('/textpro/logo-wolf2', async(req, res, next) => {
   .textpro("https://textpro.me/create-wolf-logo-galaxy-online-936.html", [
     text, text2
   ])
-  .then((data) => {
+        .then(response => response.json())
+        .then(data => {
+          var result = data;
     res.json({
-      status: true,
-      code: 200,
       creator: `${creator}`,
       result: data
     })
   })
-  .catch((err) => console.log(err));
-  } else {
-    res.json(loghandler.invalidKey)
-  }
-});
+         .catch(e => {
+         	res.json(loghandler.error)
+})
+})
+
 // photooxy
 router.get('/news/cnn', async (req, res, next) => {
         var apikeyInput = req.query.apikey,
