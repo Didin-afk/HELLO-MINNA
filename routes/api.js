@@ -1577,19 +1577,55 @@ router.get('/hadits', async (req, res, next) => {
          	res.json(loghandler.error)
 })
 })
+router.get('/random/pahlawannasional', async (req, res, next) => {
+  var apikeyInput = req.query.apikey
+	if(!apikeyInput) return res.json(loghandler.notparam)
+	if(apikeyInput != 'HADIR_HMM') return res.json(loghandler.invalidKey)
 
+       fetch(encodeURI(`https://indonesia-public-static-api.vercel.app/api/heroes`))
+        .then(response => response.json())
+        .then(data => {
+        var result = data;
+        var result = data[Math.floor(Math.random() * data.length)];
+             res.json({
+             	author: 'HADIR_HMM',
+                 result
+             })
+         })
+         .catch(e => {
+         	res.json(loghandler.error)
+})
+})
 
-router.get('/quran', async (req, res, next) => {
+router.get('/random/quran', async (req, res, next) => {
+  var apikeyInput = req.query.apikey
+
+	if(!apikeyInput) return res.json(loghandler.notparam)
+	if(apikeyInput != 'HADIR_HMM') return res.json(loghandler.invalidKey)
+
+       fetch(encodeURI(`https://raw.githubusercontent.com/penggguna/QuranJSON/master/quran-complete.json`))
+        .then(response => response.json())
+        .then(data => {
+        var result = data;
+        var result = data[Math.floor(Math.random() * data.length)];
+             res.json({
+             	author: 'HADIR_HMM',
+                 result
+             })
+         })
+         .catch(e => {
+         	res.json(loghandler.error)
+})
+})
+
+router.get('/muslim/quran', async (req, res, next) => {
         var apikeyInput = req.query.apikey,
-            surah = req.query.surah,
-            ayat = req.query.ayat
+            surah = req.query.surah
             
 	if(!apikeyInput) return res.json(loghandler.notparam)
 	if(apikeyInput != 'HADIR_HMM') return res.json(loghandler.invalidKey)
     if (!surah) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter surah"})
-    if (!ayat) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter ayat"})
-
-       fetch(encodeURI(`https://alquran-apiii.vercel.app/surah/${surah}/${ayat}`))
+       fetch(encodeURI(`https://raw.githubusercontent.com/penggguna/QuranJSON/master/surah/${surah}.json`))
         .then(response => response.json())
         .then(data => {
         var result = data;
