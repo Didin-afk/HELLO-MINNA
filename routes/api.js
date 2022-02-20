@@ -2688,10 +2688,6 @@ router.get('/game/tebakbendera', async (req, res, next) => {
         .then(data => {
         var result = data;
         var result = data[Math.floor(Math.random() * data.length)];
-        var result = data;
-             res.json({
-                 result
-             })
          })
          .catch(e => {
          	res.json(loghandler.error)
