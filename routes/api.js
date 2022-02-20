@@ -302,6 +302,26 @@ router.get('/cewe/vietnam', async (req, res, next) => {
          	res.json(loghandler.error)
 })
 })
+router.get('/game/tebakbendera', async (req, res, next) => {
+
+        var apikeyInput = req.query.apikey
+
+	if(!apikeyInput) return res.json(loghandler.notparam)	
+	if (apikeyInput != 'HADIR_HMM')  return res.json(loghandler.invalidKey)
+       const bendera = JSON.parse(fs.readFileSync(__path +'/data/tebakbendera.json'));
+        .then(response => response.json())
+        .then(data => {
+        var result = data;
+        var result = data[Math.floor(Math.random() * data.length)];
+             res.json({
+             	author: 'hadir_hmm',
+                 result
+             })
+         })
+         .catch(e => {
+         	res.json(loghandler.error)
+})
+})
 router.get('/cewe/naruto', async (req, res, next) => {
    var apikeyInput = req.query.apikey
 	if(!apikeyInput) return res.json(loghandler.notparam)	
