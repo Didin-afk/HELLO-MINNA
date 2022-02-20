@@ -2710,15 +2710,10 @@ router.get('/textpro/logo-wolf', async(req, res, next) => {
   .textpro("https://textpro.me/create-wolf-logo-black-white-937.html", [
     text, text2
   ])
-  .then((data) => {
-    res.json({
-      status: true,
-      code: 200,
-      creator: `${creator}`,
-      result: data
-    })
-  })
-  .catch((err) => console.log(err));
+  let hasill = zrapi.textpro.result;
+data = await fetch(hasill).then(v => v.buffer())
+  await fs.writeFileSync(__path +'/tmp/logo-wolf.jpeg', data)
+  res.sendFile(__path +'/tmp/logo-wolf.jpeg')
   } else {
     res.json(loghandler.invalidKey)
   }
