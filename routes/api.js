@@ -9,17 +9,20 @@ var zahirr = db.get("zahirr");
 }
 
 var creator = "@hadir_hmm"
-var ytdl = require('ytdl-core');
-var ytpl = require('ytpl');
+var neoxr = "yntkts"
+var zeks = "administrator"
+var zeks2 = "apivinz"
 var secure = require('ssl-express-www');
 var cors = require('cors');
-//var zrapi = require("zrapi");
-//var dotenv = require("dotenv").config()
-var scrapeYt = require("scrape-yt");
 var fetch = require('node-fetch');
 var cheerio = require('cheerio');
 var request = require('request');
+var zrapi = require("zrapi");
+var dotenv = require("dotenv").config()
+var fs = require('fs');
 var TikTokScraper = require('tiktok-scraper');
+var { EmojiAPI } = require("emoji-api");
+var emoji = new EmojiAPI();
 var router  = express.Router();
 
 var { color, bgcolor } = require(__path + '/lib/color.js');
