@@ -2713,35 +2713,7 @@ router.get('/game/asahotak', async (req, res, next) => {
 })
 })
 
-// photooxy
 
-router.get('/textpro/logo-wolf2', async(req, res, next) => {
-
-  var apikey = req.query.apikey,
-  text = req.query.text,
-  text2 = req.query.text2
-  
-  if(!apikey) return res.json(loghandler.notparam)
-  if(!text) return res.json(loghandler.nottext)
-  if(!text2) return res.json(loghandler.nottext2)
-  
- fetch(encodeURI("https://textpro.me/create-wolf-logo-galaxy-online-936.html", [
-    text, text2
-  ])
-        .then(response => response.json())
-        .then(data => {
-          var result = data;
-    res.json({
-      creator: `${creator}`,
-      result: data
-    })
-         })
-         .catch(e => {
-         	res.json(loghandler.error)
-})
-})
-
-// photooxy
 router.get('/news/cnn', async (req, res, next) => {
         var apikeyInput = req.query.apikey,
             type = req.query.type
