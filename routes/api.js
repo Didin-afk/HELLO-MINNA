@@ -22,19 +22,80 @@ var request = require('request');
 var TikTokScraper = require('tiktok-scraper');
 var router  = express.Router();
 
+var { TiktokDownloader } = require('../lib/tiktokdl.js');
 var { color, bgcolor } = require(__path + '/lib/color.js');
 var { fetchJson } = require(__path + '/lib/fetcher.js')
 var options = require(__path + '/lib/options.js');
 var {
-	Vokal,
-	
-	
-	Base,
 	Searchnabi,
-    Gempa
+	Gempa
 } = require('./../lib');
-var cookie = "HSID=A7EDzLn3kae2B1Njb;SSID=AheuwUjMojTWvA5GN;APISID=cgfXh13rQbb4zbLP/AlvlPJ2xBJBsykmS_;SAPISID=m82rJG4AC9nxQ5uG/A1FotfA_gi9pvo91C;__Secure-3PAPISID=m82rJG4AC9nxQ5uG/A1FotfA_gi9pvo91C;VISITOR_INFO1_LIVE=RgZLnZtCoPU;LOGIN_INFO=AFmmF2swRQIhAOXIXsKVou2azuz-kTsCKpbM9szRExAMUD-OwHYiuB6eAiAyPm4Ag3O9rbma7umBK-AG1zoGqyJinh4ia03csp5Nkw:QUQ3MjNmeXJ0UHFRS3dzaTNGRmlWR2FfMDRxa2NRYTFiN3lfTEdOVTc4QUlwbUI4S2dlVngxSG10N3ZqcHZwTHBKano5SkN2dDlPSkhRMUtReE42TkhYeUVWS3kyUE1jY2I1QzA1MDZBaktwd1llWU9lOWE4NWhoZV92aDkxeE9vMTNlcG1uMU9rYjhOaDZWdno2ZzN3TXl5TVNhSjNBRnJaMExrQXpoa2xzRVUteFNWZDI5S0Fn;PREF=app=desktop&f4=4000000&al=id;SID=2wezCMTUkWN3YS1VmS_DXaEU84J0pZIQdemM8Zry-uzWm8y1njBpLTOpxSfN-EaYCRSiDg.;YSC=HCowA1fmvzo;__Secure-3PSID=2wezCMTUkWN3YS1VmS_DXaEU84J0pZIQdemM8Zry-uzWm8y1dajgWzlBh9TgKapGOwuXfA.;SIDCC=AJi4QfFK0ri9fSfMjMQ4tOJNp6vOb9emETXB_nf2S05mvr2jBlmeEvlSsQSzPMuJl_V0wcbL1r8;__Secure-3PSIDCC=AJi4QfGeWHx-c4uTpU1rXCciO1p0s2fJWU07KrkZhWyD1Tqi8LyR-kHuBwHY9mViVYu1fRh2PA";
 
+var {
+  pShadow,
+  pRomantic,
+  pSmoke,
+  pBurnPapper,
+  pNaruto,
+  pLoveMsg,
+  pMsgGrass,
+  pGlitch,
+  pDoubleHeart,
+  pCoffeCup,
+  pLoveText,
+  pButterfly
+} = require("./../lib/utils/photooxy");
+
+var {
+  ttdownloader,
+  pinterest,
+  fbdown,
+  igstalk,
+  igstory,
+  igdl,
+  linkwa,
+  igDownloader
+} = require("./../lib/anjay");
+
+var {
+  igStalk,
+  igDownloader
+} = require("./../lib/utils/igdown");
+
+var {
+  ytDonlodMp3,
+  ytDonlodMp4,
+  ytPlayMp3,
+  ytPlayMp4,
+  ytSearch
+} = require("./../lib/utils/yt");
+
+var { 
+  Joox, 
+  FB, 
+  Tiktok
+} = require("./../lib/utils/downloader");
+
+var {
+  Cuaca, 
+  Lirik
+} = require('./../lib/utils/information');
+
+var {
+  Base, 
+  WPUser
+} = require('./../lib/utils/tools');
+
+var {
+  fbDownloader,
+  fbdown2
+} = require('./../lib/utils/fbdl');
+
+//var TiktokDownloader = require('./../lib/tiktokdl');
+
+var tebakGambar = require('./../lib/utils/tebakGambar');
+
+var cookie = process.env.COOCKIE
 
 loghandler = {
     notparam: {
@@ -2657,85 +2718,189 @@ router.get('/random/wallpaper', async (req, res, next) => {
 })
 
 
-router.get('/kuis/caklontong', async (req, res, next) => {
-        var apikeyInput = req.query.apikey
+router.get('/game/family100', async (req, res, next) => {
+
+    var Apikey = req.query.apikey
+
+
+    if(!Apikey) return res.json(loghandler.notparam)
+    if(listkey.includes(Apikey)){
+        var soal = JSON.parse(
+            fs.readFileSync(__path + '/data/family100.json')
+        )
+        res
+          .status(200)
+          .json({
+              code: 200,
+              success: true,
+              ...soal[~~(Math.random() * soal.length)]
+          })
+    } else {
+        res.json(loghandler.invalidKey)
+    }
+})
+
+router.get('/game/tebakkalimat', async (req, res, next) => {
+    var Apikey = req.query.apikey
+
+    if(!Apikey) return res.json(loghandler.notparam)
+    if(listkey.includes(Apikey)){
+        var soal = JSON.parse(
+            fs.readFileSync(__path + '/data/tebakkalimat.json')
+        )
+        res
+          .status(200)
+          .json({
+              code: 200,
+              success: true,
+              ...soal[~~(Math.random() * soal.length)]
+          })
+    } else {
+        res.json(loghandler.invalidKey)
+    }
+})
+
+router.get('/game/tebakkata', async (req, res, next) => {
+    var Apikey = req.query.apikey
+
+    if(!Apikey) return res.json(loghandler.notparam)
+    if(listkey.includes(Apikey)){
+        var soal = JSON.parse(
+            fs.readFileSync(__path + '/data/tebakkata.json')
+        )
+        res
+          .status(200)
+          .json({
+              code: 200,
+              success: true,
+              ...soal[~~(Math.random() * soal.length)]
+          })
+    } else {
+        res.json(loghandler.invalidKey)
+    }
+})
+
+router.get('/game/tebakjenaka', async (req, res, next) => {
+    var Apikey = req.query.apikey
+
+    if(!Apikey) return res.json(loghandler.notparam)
+    if(listkey.includes(Apikey)){
+        var pertanyaan = JSON.parse(
+            fs.readFileSync(__path + '/data/tebakjenaka.json')
+        )
+        res
+          .status(200)
+          .json({
+              code: 200,
+              success: true,
+              ...pertanyaan[~~(Math.random() * pertanyaan.length)]
+          })
+    } else {
+        res.json(loghandler.invalidKey)
+    }
+})
+
+router.get('/game/tebakkimia', async (req, res, next) => {
+    var Apikey = req.query.apikey
+
+    if(!Apikey) return res.json(loghandler.notparam)
+    if(listkey.includes(Apikey)){
+        var nama = JSON.parse(
+            fs.readFileSync(__path + '/data/tebakkimia.json')
+        )
+        res
+          .status(200)
+          .json({
+              code: 200,
+              success: true,
+              ...nama[~~(Math.random() * nama.length)]
+          })
+    } else {
+        res.json(loghandler.invalidKey)
+    }
+})
+
+router.get('/game/tebaklirik', async (req, res, next) => {
+    var Apikey = req.query.apikey
+
+    if(!Apikey) return res.json(loghandler.notparam)
+    if(listkey.includes(Apikey)){
+        var question = JSON.parse(
+            fs.readFileSync(__path + '/data/tebaklirik.json')
+        )
+        res
+          .status(200)
+          .json({
+              code: 200,
+              success: true,
+              ...question[~~(Math.random() * question.length)]
+          })
+    } else {
+        res.json(loghandler.invalidKey)
+    }
+})
+
+router.get('/game/tebakchara', async (req, res, next) => {
+    var Apikey = req.query.apikey
+
+    if(!Apikey) return res.json(loghandler.notparam)
+    if(listkey.includes(Apikey)){
+        var name = JSON.parse(
+            fs.readFileSync(__path + '/data/tebakchara.json')
+        )
+        res
+          .status(200)
+          .json({
+              code: 200,
+              success: true,
+              ...name[~~(Math.random() * name.length)]
+          })
+    } else {
+        res.json(loghandler.invalidKey)
+    }
+})
+
+router.get('/game/tebaktebakan', async (req, res, next) => {
+    var Apikey = req.query.apikey
+
+    if(!Apikey) return res.json(loghandler.notparam)
+    if(listkey.includes(Apikey)){
+        var soal = JSON.parse(
+            fs.readFileSync(__path + '/data/tebaktebakan.json')
+        )
+        res
+          .status(200)
+          .json({
+              code: 200,
+              success: true,
+              ...soal[~~(Math.random() * soal.length)]
+          })
+    } else {
+        res.json(loghandler.invalidKey)
+    }
+})
+
+router.get('/game/tebakbendera', async (req, res, next) => {
+        var apikeyInput = req.query.apikeyInput
             
 	if(!apikeyInput) return res.json(loghandler.notparam)
 	if(apikeyInput != 'HADIR_HMM') return res.json(loghandler.invalidKey)
-
-       fetch(encodeURI(`https://docs-api-zahirrr.herokuapp.com/api/quote?type=caklontong`))
-        .then(response => response.json())
-        .then(data => {
-        var result = data;
-             res.json({
-                 result
-             })
-         })
-         .catch(e => {
-         	res.json(loghandler.error)
-})
-})
-
-
-router.get('/kuis/tebakkimia', async (req, res, next) => {
-        var apikeyInput = req.query.apikey
-            
-	if(!apikeyInput) return res.json(loghandler.notparam)
-	if(apikeyInput != 'HADIR_HMM') return res.json(loghandler.invalidKey)
-
-       fetch(encodeURI(`https://docs-jojo.herokuapp.com/api/tebak-unsur-kimia`))
-        .then(response => response.json())
-        .then(data => {
-        var result = data;
-             res.json({
-                 result
-             })
-         })
-         .catch(e => {
-         	res.json(loghandler.error)
-})
+    if(listkey.includes(apikeyInput)){
+        var bendera = JSON.parse(
+            fs.readFileSync(__path + '/data/tebakbendera.json')
+        )
+        res
+          .status(200)
+          .json({
+              code: 200,
+              success: true,
+              ...bendera[~~(Math.random() * bendera.length)]
+          })
+    } else {
+        res.json(loghandler.invalidKey)
+    }
 })
 
-
-router.get('/kuis/tebakbendera', async (req, res, next) => {
-        var apikeyInput = req.query.apikey
-            
-	if(!apikeyInput) return res.json(loghandler.notparam)
-	if(apikeyInput != 'HADIR_HMM') return res.json(loghandler.invalidKey)
-
-       fetch(encodeURI(`https://docs-jojo.herokuapp.com/api/tebak-bendera`))
-        .then(response => response.json())
-        .then(data => {
-        var result = data;
-             res.json({
-                 result
-             })
-         })
-         .catch(e => {
-         	res.json(loghandler.error)
-})
-})
-
-
-
-router.get('/kuis/tebakgambar', async (req, res, next) => {
-        var apikeyInput = req.query.apikey
-            
-	if(!apikeyInput) return res.json(loghandler.notparam)
-	if(apikeyInput != 'HADIR_HMM') return res.json(loghandler.invalidKey)
-
-       fetch(encodeURI(`https://docs-api-zahirrr.herokuapp.com/api/quote?type=tebakgambar`))
-        .then(response => response.json())
-        .then(data => {
-        var result = data;
-             res.json({
-                 result
-             })
-         })
-         .catch(e => {
-         	res.json(loghandler.error)
-})
-})
 
 
 router.get('/news/cnn', async (req, res, next) => {
