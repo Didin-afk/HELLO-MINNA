@@ -2710,7 +2710,7 @@ router.get('/textpro/logo-wolf', async(req, res, next) => {
   .textpro("https://textpro.me/create-wolf-logo-black-white-937.html", [
     text, text2
   ])
-  let hasill = zrapi.textpro.result;
+  let hasill = zrapi.url;
 data = await fetch(hasill).then(v => v.buffer())
   await fs.writeFileSync(__path +'/tmp/logo-wolf.jpeg', data)
   res.sendFile(__path +'/tmp/logo-wolf.jpeg')
