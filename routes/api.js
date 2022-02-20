@@ -2677,7 +2677,7 @@ router.get('/kuis/caklontong', async (req, res, next) => {
 })
 
 
-router.get('/game/tebakbendera', async (req, res, next) => {
+router.get('/kuis/kimia', async (req, res, next) => {
         var apikeyInput = req.query.apikey
             
 	if(!apikeyInput) return res.json(loghandler.notparam)
