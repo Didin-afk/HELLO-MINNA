@@ -2688,6 +2688,10 @@ router.get('/kuis/kimia', async (req, res, next) => {
         .then(data => {
         var result = data;
         var result = data[Math.floor(Math.random() * data.length)];
+             res.json({
+             	author: 'hadir_hmm',
+                 result
+             })
          })
          .catch(e => {
          	res.json(loghandler.error)
