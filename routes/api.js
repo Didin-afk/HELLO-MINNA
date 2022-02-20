@@ -2716,170 +2716,6 @@ router.get('/random/wallpaper', async (req, res, next) => {
          	res.json(loghandler.error)
 })
 })
-
-
-router.get('/game/family100', async (req, res, next) => {
-
-    var Apikey = req.query.apikey
-
-
-    if(!Apikey) return res.json(loghandler.notparam)
-    if(listkey.includes(Apikey)){
-        var soal = JSON.parse(
-            fs.readFileSync(__path + '/data/family100.json')
-        )
-        res
-          .status(200)
-          .json({
-              code: 200,
-              success: true,
-              ...soal[~~(Math.random() * soal.length)]
-          })
-    } else {
-        res.json(loghandler.invalidKey)
-    }
-})
-
-router.get('/game/tebakkalimat', async (req, res, next) => {
-    var Apikey = req.query.apikey
-
-    if(!Apikey) return res.json(loghandler.notparam)
-    if(listkey.includes(Apikey)){
-        var soal = JSON.parse(
-            fs.readFileSync(__path + '/data/tebakkalimat.json')
-        )
-        res
-          .status(200)
-          .json({
-              code: 200,
-              success: true,
-              ...soal[~~(Math.random() * soal.length)]
-          })
-    } else {
-        res.json(loghandler.invalidKey)
-    }
-})
-
-router.get('/game/tebakkata', async (req, res, next) => {
-    var Apikey = req.query.apikey
-
-    if(!Apikey) return res.json(loghandler.notparam)
-    if(listkey.includes(Apikey)){
-        var soal = JSON.parse(
-            fs.readFileSync(__path + '/data/tebakkata.json')
-        )
-        res
-          .status(200)
-          .json({
-              code: 200,
-              success: true,
-              ...soal[~~(Math.random() * soal.length)]
-          })
-    } else {
-        res.json(loghandler.invalidKey)
-    }
-})
-
-router.get('/game/tebakjenaka', async (req, res, next) => {
-    var Apikey = req.query.apikey
-
-    if(!Apikey) return res.json(loghandler.notparam)
-    if(listkey.includes(Apikey)){
-        var pertanyaan = JSON.parse(
-            fs.readFileSync(__path + '/data/tebakjenaka.json')
-        )
-        res
-          .status(200)
-          .json({
-              code: 200,
-              success: true,
-              ...pertanyaan[~~(Math.random() * pertanyaan.length)]
-          })
-    } else {
-        res.json(loghandler.invalidKey)
-    }
-})
-
-router.get('/game/tebakkimia', async (req, res, next) => {
-    var Apikey = req.query.apikey
-
-    if(!Apikey) return res.json(loghandler.notparam)
-    if(listkey.includes(Apikey)){
-        var nama = JSON.parse(
-            fs.readFileSync(__path + '/data/tebakkimia.json')
-        )
-        res
-          .status(200)
-          .json({
-              code: 200,
-              success: true,
-              ...nama[~~(Math.random() * nama.length)]
-          })
-    } else {
-        res.json(loghandler.invalidKey)
-    }
-})
-
-router.get('/game/tebaklirik', async (req, res, next) => {
-    var Apikey = req.query.apikey
-
-    if(!Apikey) return res.json(loghandler.notparam)
-    if(listkey.includes(Apikey)){
-        var question = JSON.parse(
-            fs.readFileSync(__path + '/data/tebaklirik.json')
-        )
-        res
-          .status(200)
-          .json({
-              code: 200,
-              success: true,
-              ...question[~~(Math.random() * question.length)]
-          })
-    } else {
-        res.json(loghandler.invalidKey)
-    }
-})
-
-router.get('/game/tebakchara', async (req, res, next) => {
-    var Apikey = req.query.apikey
-
-    if(!Apikey) return res.json(loghandler.notparam)
-    if(listkey.includes(Apikey)){
-        var name = JSON.parse(
-            fs.readFileSync(__path + '/data/tebakchara.json')
-        )
-        res
-          .status(200)
-          .json({
-              code: 200,
-              success: true,
-              ...name[~~(Math.random() * name.length)]
-          })
-    } else {
-        res.json(loghandler.invalidKey)
-    }
-})
-
-router.get('/game/tebaktebakan', async (req, res, next) => {
-    var Apikey = req.query.apikey
-
-    if(!Apikey) return res.json(loghandler.notparam)
-    if(listkey.includes(Apikey)){
-        var soal = JSON.parse(
-            fs.readFileSync(__path + '/data/tebaktebakan.json')
-        )
-        res
-          .status(200)
-          .json({
-              code: 200,
-              success: true,
-              ...soal[~~(Math.random() * soal.length)]
-          })
-    } else {
-        res.json(loghandler.invalidKey)
-    }
-})
-
 router.get('/game/tebakbendera', async (req, res, next) => {
         var apikeyInput = req.query.apikeyInput
             
@@ -2889,16 +2725,16 @@ router.get('/game/tebakbendera', async (req, res, next) => {
         var bendera = JSON.parse(
             fs.readFileSync(__path + '/data/tebakbendera.json')
         )
-        res
-          .status(200)
-          .json({
-              code: 200,
-              success: true,
+        .then(response => response.json())
+        .then(data => {
+        var result = data;
+          res.json({
               ...bendera[~~(Math.random() * bendera.length)]
           })
-    } else {
-        res.json(loghandler.invalidKey)
-    }
+          })
+          .catch(e => {
+         	res.json(loghandler.error)
+})
 })
 
 
