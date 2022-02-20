@@ -13,13 +13,12 @@ var ytdl = require('ytdl-core');
 var ytpl = require('ytpl');
 var secure = require('ssl-express-www');
 var cors = require('cors');
-//var zrapi = require("zrapi");
-//var dotenv = require("dotenv").config()
+var zrapi = require("zrapi");
+var dotenv = require("dotenv").config()
 var scrapeYt = require("scrape-yt");
 var fetch = require('node-fetch');
 var cheerio = require('cheerio');
 var request = require('request');
-var zrapi = require("zrapi");
 var TikTokScraper = require('tiktok-scraper');
 var router  = express.Router();
 
@@ -2718,18 +2717,15 @@ router.get('/game/asahotak', async (req, res, next) => {
 
 router.get('/textpro/logo-wolf2', async(req, res, next) => {
 
-  const apikey = req.query.apikey,
-
-  const text = req.query.text,
-  const text2 = req.query.text2
+  var apikey = req.query.apikey,
+  text = req.query.text,
+  text2 = req.query.text2
   
   if(!apikey) return res.json(loghandler.notparam)
   if(!text) return res.json(loghandler.nottext)
   if(!text2) return res.json(loghandler.nottext2)
   
-  if(listkey.includes(apikey)){
-    zrapi 
-  .textpro("https://textpro.me/create-wolf-logo-galaxy-online-936.html", [
+ fetch(encodeURI("https://textpro.me/create-wolf-logo-galaxy-online-936.html", [
     text, text2
   ])
         .then(response => response.json())
@@ -2739,7 +2735,7 @@ router.get('/textpro/logo-wolf2', async(req, res, next) => {
       creator: `${creator}`,
       result: data
     })
-  })
+         })
          .catch(e => {
          	res.json(loghandler.error)
 })
