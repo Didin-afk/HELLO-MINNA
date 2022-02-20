@@ -2657,20 +2657,17 @@ router.get('/random/wallpaper', async (req, res, next) => {
 })
 
 
-router.get('/game/tebakbendera', async (req, res, next) => {
-
+router.get('/kuis/caklontong', async (req, res, next) => {
         var apikeyInput = req.query.apikey
+            
+	if(!apikeyInput) return res.json(loghandler.notparam)
+	if(apikeyInput != 'HADIR_HMM') return res.json(loghandler.invalidKey)
 
-	if(!apikeyInput) return res.json(loghandler.notparam)	
-	if (apikeyInput != 'HADIR_HMM')  return res.json(loghandler.invalidKey)
-       const Benddera = JSON.parse(fs.readFileSync(__path +'/data/tebakbendera.json'));
-  const randBenddera = Benddera[Math.floor(Math.random() * Benddera.length)];
+       fetch(encodeURI(`https://docs-api-zahirrr.herokuapp.com/api/quote?type=caklontong`))
         .then(response => response.json())
         .then(data => {
         var result = data;
-        var result = data[Math.floor(Math.random() * data.length)];
              res.json({
-             	author: 'hadir_hmm',
                  result
              })
          })
@@ -2678,6 +2675,68 @@ router.get('/game/tebakbendera', async (req, res, next) => {
          	res.json(loghandler.error)
 })
 })
+
+
+router.get('/kuis/tebakkimia', async (req, res, next) => {
+        var apikeyInput = req.query.apikey
+            
+	if(!apikeyInput) return res.json(loghandler.notparam)
+	if(apikeyInput != 'HADIR_HMM') return res.json(loghandler.invalidKey)
+
+       fetch(encodeURI(`https://docs-jojo.herokuapp.com/api/tebak-unsur-kimia`))
+        .then(response => response.json())
+        .then(data => {
+        var result = data;
+             res.json({
+                 result
+             })
+         })
+         .catch(e => {
+         	res.json(loghandler.error)
+})
+})
+
+
+router.get('/kuis/tebakbendera', async (req, res, next) => {
+        var apikeyInput = req.query.apikey
+            
+	if(!apikeyInput) return res.json(loghandler.notparam)
+	if(apikeyInput != 'HADIR_HMM') return res.json(loghandler.invalidKey)
+
+       fetch(encodeURI(`https://docs-jojo.herokuapp.com/api/tebak-bendera`))
+        .then(response => response.json())
+        .then(data => {
+        var result = data;
+             res.json({
+                 result
+             })
+         })
+         .catch(e => {
+         	res.json(loghandler.error)
+})
+})
+
+
+
+router.get('/kuis/tebakgambar', async (req, res, next) => {
+        var apikeyInput = req.query.apikey
+            
+	if(!apikeyInput) return res.json(loghandler.notparam)
+	if(apikeyInput != 'HADIR_HMM') return res.json(loghandler.invalidKey)
+
+       fetch(encodeURI(`https://docs-api-zahirrr.herokuapp.com/api/quote?type=tebakgambar`))
+        .then(response => response.json())
+        .then(data => {
+        var result = data;
+             res.json({
+                 result
+             })
+         })
+         .catch(e => {
+         	res.json(loghandler.error)
+})
+})
+
 
 router.get('/news/cnn', async (req, res, next) => {
         var apikeyInput = req.query.apikey,
