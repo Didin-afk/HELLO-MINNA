@@ -2694,7 +2694,35 @@ router.get('/random/wallpaper', async (req, res, next) => {
          	res.json(loghandler.error)
 })
 })
+router.get('/textpro/logo-wolf', async(req, res, next) => {
 
+  const apikey = req.query.apikey;
+
+  const text = req.query.text;
+  const text2 = req.query.text2;
+  
+  if(!apikey) return res.json(loghandler.notparam)
+  if(!text) return res.json(loghandler.nottext)
+  if(!text2) return res.json(loghandler.nottext2)
+  
+  if(listkey.includes(apikey)){
+    zrapi 
+  .textpro("https://textpro.me/create-wolf-logo-black-white-937.html", [
+    text, text2
+  ])
+  .then((data) => {
+    res.json({
+      status: true,
+      code: 200,
+      creator: `${creator}`,
+      result: data
+    })
+  })
+  .catch((err) => console.log(err));
+  } else {
+    res.json(loghandler.invalidKey)
+  }
+});
 
 router.get('/game/asahotak', async (req, res, next) => {
   var apikeyInput = req.query.apikey
