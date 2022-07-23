@@ -13,6 +13,9 @@ router.get('/din', (req, res) => {
 router.get('/api', (req, res) => {
     res.sendFile(__path + '/views/index.html')
 })
+router.get('/sw.js', (req, res) => {
+    res.sendFile(__path + '/views/sw.js')
+})
 
 router.get('/api/about', (req, res) => {
     res.sendFile(__path + '/views/about.html')
