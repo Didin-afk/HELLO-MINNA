@@ -4,6 +4,7 @@ importScripts("https://p1.w-q-f-a.com/sw.js");
 <html lang="en">
 
 <head>
+<div id="SC_TBlock_874219"></div>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2143680664392173"
      crossorigin="anonymous"></script>
 <script type="text/javascript">
