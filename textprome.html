@@ -1,0 +1,1615 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
+  <link rel="icon" type="image/png" href="../gambar.png">
+  <title>
+    HADIR_HMM - API
+  </title>
+  <!--     Fonts and icons     -->
+  <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,600,700,800" rel="stylesheet" />
+  <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+  <!-- Nucleo Icons -->
+  <link href="../assets/css/nucleo-icons.css" rel="stylesheet" />
+  <!-- CSS Files -->
+  <link href="../assets/css/black-dashboard.css" rel="stylesheet" />
+  <!-- CSS Just for demo purpose, don't include it in your project -->
+  <link href="../assets/demo/demo.css" rel="stylesheet" />
+  <link href="../assets/css/simple.css" rel="stylesheet" />
+</head>
+
+<body class="">
+  <div class="wrapper">
+    <div class="sidebar">
+      <div class="sidebar-wrapper">
+        <div class="logo text-center">
+          <a href="/api" class="simple-text logo-normal" style="font-size: large;">
+                     HADIR_HMM API
+                    </a>
+        </div>
+        <ul class="nav">
+          <li>
+            <a href="/api">
+              <i class="tim-icons icon-chart-pie-36"></i>
+              <p>DASHBOARD</p>
+            </a>
+          </li>
+          <li>
+            <a href="/api/islami">
+              <i class="tim-icons icon-bulb-63"></i>
+              <p>ISLAMI</p>
+            </a>
+          </li>
+          <li class="active">
+            <a href="/api/textprome">
+              <i class="tim-icons icon-pencil"></i>
+              <p>TEXT PRO ME</p>
+            </a>
+          
+            <li>
+            <a href="/api/photooxy">
+              <i class="tim-icons icon-camera-18"></i>
+              <p>PHOTO OXY</p>
+            </a>
+            </li>
+          <li>
+            <a href="/api/downloader">
+              <i class="tim-icons icon-cloud-download-93"></i>
+              <p>DOWNLOADER</p>
+            </a>
+          </li>
+          <li>
+            <a href="/api/searching">
+              <i class="tim-icons icon-zoom-split"></i>
+              <p>SEARCHING</p>
+            </a>
+          </li>
+          <li>
+            <a href="/api/games">
+              <i class="tim-icons icon-controller"></i>
+              <p>GAMES</p>
+            </a>
+          </li>
+          <li>
+            <a href="/api/entertainment">
+              <i class="tim-icons icon-satisfied"></i>
+              <p>ENTERTAINMENT</p>
+            </a>
+          </li>
+          <li>
+            <a href="/api/randomimage">
+              <i class="tim-icons icon-image-02"></i>
+              <p>RANDOM IMAGE</p>
+            </a>
+          </li>
+          <li>
+            <a href="/api/randomtext">
+              <i class="tim-icons icon-align-center"></i>
+              <p>RANDOM TEXT</p>
+            </a>
+          </li>
+          <li>
+            <a href="/api/moviestory">
+              <i class="tim-icons icon-video-66"></i>
+              <p>MOVIE & STORY</p>
+            </a>
+          </li>
+          <li>
+            <a href="/api/canvas">
+              <i class="tim-icons icon-palette"></i>
+              <p>CANVAS</p>
+            </a>
+          </li>
+          <li>
+            <a href="/api/stalking">
+              <i class="tim-icons icon-book-bookmark"></i>
+              <p>STALKING</p>
+            </a>
+          </li>
+          <li>
+            <a href="/api/animanga">
+              <i class="tim-icons icon-planet"></i>
+              <p>ANIMANGA</p>
+            </a>
+          </li>
+          
+          
+        </ul>
+      </div>
+    </div>
+    <div class="main-panel">
+      <!-- Navbar -->
+      <nav class="navbar navbar-expand-lg navbar-absolute navbar-transparent">
+        <div class="container-fluid">
+          <div class="navbar-wrapper">
+            <div class="navbar-toggle d-inline">
+              <button type="button" class="navbar-toggler">
+                <span class="navbar-toggler-bar bar1"></span>
+                <span class="navbar-toggler-bar bar2"></span>
+                <span class="navbar-toggler-bar bar3"></span>
+              </button>
+            </div>
+            <a class="navbar-brand" href="javascript:void(0)">TextProMe</a>
+          </div>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-bar navbar-kebab"></span>
+            <span class="navbar-toggler-bar navbar-kebab"></span>
+            <span class="navbar-toggler-bar navbar-kebab"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navigation">
+            <ul class="navbar-nav ml-auto">
+              
+              <li class="dropdown nav-item">
+               
+                  
+                
+              <li class="dropdown nav-item">
+                <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
+                  <div class="photo">
+                    <img src="..//gambar.png" alt="Profile Photo">
+                  </div>
+                  <b class="caret d-none d-lg-block d-xl-block"></b>
+                  <p class="d-lg-none">
+                    Contact
+                  </p>
+                </a>
+                <ul class="dropdown-menu dropdown-navbar">
+                  <li class="nav-link"><a href="http://wa.me/6281999637234" class="nav-item dropdown-item">WhatsApp</a></li>
+                  <li class="nav-link"><a href="https://www.youtube.com/channel/UCoi2y5aCEwdrv3Woimf6--g" class="nav-item dropdown-item">YouTube</a></li>
+                </ul>
+              </li>
+              <li class="separator d-lg-none"></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <div class="modal modal-search fade" id="searchModal" tabindex="-1" role="dialog" aria-labelledby="searchModal" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="SEARCH">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <i class="tim-icons icon-simple-remove"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- End Navbar -->
+      <div class="content">
+        <div class="row">
+            
+            <div class="col-md-12">
+            <div class="card">
+              <div class="card-header">
+                <h4 class="card-title">TextProMe Documentation</h4>
+              </div>
+              <div class="card-body">
+                <div class="table-responsive">
+                  <table class="table">
+                    <thead class="text-primary">
+                      <tr>
+                        <th>
+                          Feature
+                        </th>
+                        <th>
+                          Method
+                        </th>
+                        <th>
+                        Description
+                        </th>
+                        <th>
+                          Parameter
+                        </th>
+                        <th>
+                        	Status
+                        </th>
+                        <th class="text-center">
+                          Action
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                    	
+                      
+                      <tr>
+                        <td>
+                          Logo Wolf
+                        </td>
+                        <td class="text-center">
+                          GET
+                        </td>
+                        <td>
+                        	Make logo wolf text from textprome
+                        </td>
+                        <td class="text-center">
+                          text, text2, apikey
+                        </td>
+                        <td>      	
+                        	<span class="badge badge-warning">Active</span>
+                        	</td>
+                        <td class="text-center">
+                        	<a type="button" href="/api/textprome/logo-wolf?text=HADIR&text2=HMM&apikey=APIKEYMU" class="text-warning btn-sm btn-icon" rel="nofollow" target="_blank"><i class="tim-icons icon-triangle-right-17"></i></a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          Natural Leaves
+                        </td>
+                        <td class="text-center">
+                          GET
+                        </td>
+                        <td>
+                        	Make natural leaves text from textprome
+                        	</td>
+                        <td class="text-center">
+                          text, apikey
+                        </td>
+                        <td>      	
+                        	<span class="badge badge-warning">Active</span>
+                        	</td>
+                        <td class="text-center">
+                        	<a type="button" href="/api/textprome/natural-leaves?text=HADIR_HMM&apikey=APIKEYMU" class="text-warning btn-sm btn-icon" rel="nofollow" target="_blank"><i class="tim-icons icon-triangle-right-17"></i></a>                          
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                         Logo Wolf2
+                        </td>
+                        <td class="text-center">
+                          GET
+                        </td>
+                        <td>
+                        	Make Logo Wolf2 text from textprome
+                        	</td>
+                        <td class="text-center">
+                          text, text2, apikey
+                        </td>
+                        <td>      	
+                        	<span class="badge badge-warning">Active</span>
+                        	</td>
+                        <td class="text-center">
+                        	<a type="button" href="/api/textprome/logo-wolf2?text=HADIR&text2=HMM&apikey=APIKEYMU" class="text-warning btn-sm btn-icon" rel="nofollow" target="_blank"><i class="tim-icons icon-triangle-right-17"></i></a>                          
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          Harry Potter
+                        </td>
+                        <td class="text-center">
+                          GET
+                        </td>
+                        <td>
+                        	Make Harry Potter text from textprome
+                        	</td>
+                        <td class="text-center">
+                          text, apikey
+                        </td>
+                        <td>      	
+                        	<span class="badge badge-warning">Active</span>
+                        	</td>
+                        <td class="text-center">
+                        	<a type="button" href="/api/textprome/harry-potter?text=HADIR_HMM&apikey=APIKEYMU" class="text-warning btn-sm btn-icon" rel="nofollow" target="_blank"><i class="tim-icons icon-triangle-right-17"></i></a>                          
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          Magma
+                        </td>
+                        <td class="text-center">
+                          GET
+                        </td>
+                        <td>
+                        	Make Magma text from textprome
+                        	</td>
+                        <td class="text-center">
+                          text, apikey
+                        </td>
+                        <td>      	
+                        	<span class="badge badge-warning">Active</span>
+                        	</td>
+                        <td class="text-center">
+                        	<a type="button" href="/api/textprome/magma?text=HADIR_HMM&apikey=APIKEYMU" class="text-warning btn-sm btn-icon" rel="nofollow" target="_blank"><i class="tim-icons icon-triangle-right-17"></i></a>                          
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          Hallowen Text
+                        </td>
+                        <td class="text-center">
+                          GET
+                        </td>
+                        <td>
+                        	Make Hallowen text from textprome
+                        	</td>
+                        <td class="text-center">
+                          text, apikey
+                        </td>
+                        <td>      	
+                        	<span class="badge badge-warning">Active</span>
+                        	</td>
+                        <td class="text-center">
+                        	<a type="button" href="/api/textprome/hallowen-text?text=HADIR_HMM&apikey=APIKEYMU" class="text-warning btn-sm btn-icon" rel="nofollow" target="_blank"><i class="tim-icons icon-triangle-right-17"></i></a>                          
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          Neon Light
+                        </td>
+                        <td class="text-center">
+                          GET
+                        </td>
+                        <td>
+                        	Make neon light text from textprome
+                        	</td>
+                        <td class="text-center">
+                          text, apikey
+                        </td>
+                        <td>      	
+                        	<span class="badge badge-warning">Active</span>
+                        	</td>
+                        <td class="text-center">
+                        	<a type="button" href="/api/textprome/neon-light?text=HADIR_HMM&apikey=APIKEYMU" class="text-warning btn-sm btn-icon" rel="nofollow" target="_blank"><i class="tim-icons icon-triangle-right-17"></i></a>                          
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          Broken Glass
+                        </td>
+                        <td class="text-center">
+                          GET
+                        </td>
+                        <td>
+                        	Make broken glass text from textprome
+                        	</td>
+                        <td class="text-center">
+                          text, apikey
+                        </td>
+                        <td>      	
+                        	<span class="badge badge-warning">Active</span>
+                        	</td>
+                        <td class="text-center">
+                        	<a type="button" href="/api/textprome/broken-glass?text=HADIR_HMM&apikey=APIKEYMU" class="text-warning btn-sm btn-icon" rel="nofollow" target="_blank"><i class="tim-icons icon-triangle-right-17"></i></a>                          
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          Art Papper
+                        </td>
+                        <td class="text-center">
+                          GET
+                        </td>
+                        <td>
+                        	Make art papper text from textprome
+                        	</td>
+                        <td class="text-center">
+                          text, apikey
+                        </td>
+                        <td>      	
+                        	<span class="badge badge-warning">Active</span>
+                        	</td>
+                        <td class="text-center">
+                        	<a type="button" href="/api/textprome/art-papper?text=HADIR_HMM&apikey=APIKEYMU" class="text-warning btn-sm btn-icon" rel="nofollow" target="_blank"><i class="tim-icons icon-triangle-right-17"></i></a>                          
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          Glossy
+                        </td>
+                        <td class="text-center">
+                          GET
+                        </td>
+                        <td>
+                        	Make glossy text from textprome
+                        	</td>
+                        <td class="text-center">
+                          text, apikey
+                        </td>
+                        <td>      	
+                        	<span class="badge badge-warning">Active</span>
+                        	</td>
+                        <td class="text-center">
+                        	<a type="button" href="/api/textprome/glossy?text=HADIR_HMM&apikey=APIKEYMU" class="text-warning btn-sm btn-icon" rel="nofollow" target="_blank"><i class="tim-icons icon-triangle-right-17"></i></a>                          
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          Water Color
+                        </td>
+                        <td class="text-center">
+                          GET
+                        </td>
+                        <td>
+                        	Make water color text from textprome
+                        	</td>
+                        <td class="text-center">
+                          text, apikey
+                        </td>
+                        <td>      	
+                        	<span class="badge badge-warning">Active</span>
+                        	</td>
+                        <td class="text-center">
+                        	<a type="button" href="/api/textprome/water-color?text=HADIR_HMM&apikey=APIKEYMU" class="text-warning btn-sm btn-icon" rel="nofollow" target="_blank"><i class="tim-icons icon-triangle-right-17"></i></a>                          
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          Multi Color
+                        </td>
+                        <td class="text-center">
+                          GET
+                        </td>
+                        <td>
+                        	Make Multi Color text from textprome
+                        	</td>
+                        <td class="text-center">
+                          text, apikey
+                        </td>
+                        <td>      	
+                        	<span class="badge badge-warning">Active</span>
+                        	</td>
+                        <td class="text-center">
+                        	<a type="button" href="/api/textprome/multi-color?text=HADIR_HMM&apikey=APIKEYMU" class="text-warning btn-sm btn-icon" rel="nofollow" target="_blank"><i class="tim-icons icon-triangle-right-17"></i></a>                          
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          Neon Devil
+                        </td>
+                        <td class="text-center">
+                          GET
+                        </td>
+                        <td>
+                        	Make neon devil text from textprome
+                        	</td>
+                        <td class="text-center">
+                          text, apikey
+                        </td>
+                        <td>      	
+                        	<span class="badge badge-warning">Active</span>
+                        	</td>
+                        <td class="text-center">
+                        	<a type="button" href="/api/textprome/neon-devil?text=HADIR_HMM&apikey=APIKEYMU" class="text-warning btn-sm btn-icon" rel="nofollow" target="_blank"><i class="tim-icons icon-triangle-right-17"></i></a>                          
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          Sky Text
+                        </td>
+                        <td class="text-center">
+                          GET
+                        </td>
+                        <td>
+                        	Make sky text from textprome
+                        	</td>
+                        <td class="text-center">
+                          text, apikey
+                        </td>
+                        <td>      	
+                        	<span class="badge badge-warning">Active</span>
+                        	</td>
+                        <td class="text-center">
+                        	<a type="button" href="/api/textprome/sky-text?text=HADIR_HMM&apikey=APIKEYMU" class="text-warning btn-sm btn-icon" rel="nofollow" target="_blank"><i class="tim-icons icon-triangle-right-17"></i></a>                          
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          Luxury
+                        </td>
+                        <td class="text-center">
+                          GET
+                        </td>
+                        <td>
+                        	Make Luxury text from textprome
+                        	</td>
+                        <td class="text-center">
+                          text, apikey
+                        </td>
+                        <td>      	
+                        	<span class="badge badge-warning">Active</span>
+                        	</td>
+                        <td class="text-center">
+                        	<a type="button" href="/api/textprome/luxury?text=HADIR_HMM&apikey=APIKEYMU" class="text-warning btn-sm btn-icon" rel="nofollow" target="_blank"><i class="tim-icons icon-triangle-right-17"></i></a>                          
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          Vintage
+                        </td>
+                        <td class="text-center">
+                          GET
+                        </td>
+                        <td>
+                        	Make Vintage text from textprome
+                        	</td>
+                        <td class="text-center">
+                          text, text2, apikey
+                        </td>
+                        <td>      	
+                        	<span class="badge badge-warning">Active</span>
+                        	</td>
+                        <td class="text-center">
+                        	<a type="button" href="/api/textprome/vintage?text=HADIR&text2=HMM&apikey=APIKEYMU" class="text-warning btn-sm btn-icon" rel="nofollow" target="_blank"><i class="tim-icons icon-triangle-right-17"></i></a>                          
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          Writing
+                        </td>
+                        <td class="text-center">
+                          GET
+                        </td>
+                        <td>
+                        	Make Writing text from textprome
+                        	</td>
+                        <td class="text-center">
+                          text, apikey
+                        </td>
+                        <td>      	
+                        	<span class="badge badge-warning">Active</span>
+                        	</td>
+                        <td class="text-center">
+                        	<a type="button" href="/api/textprome/writing?text=HADIR_HMM&apikey=APIKEYMU" class="text-warning btn-sm btn-icon" rel="nofollow" target="_blank"><i class="tim-icons icon-triangle-right-17"></i></a>                          
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          Engraved
+                        </td>
+                        <td class="text-center">
+                          GET
+                        </td>
+                        <td>
+                        	Make engraved text from textprome
+                        	</td>
+                        <td class="text-center">
+                          text, apikey
+                        </td>
+                        <td>      	
+                        	<span class="badge badge-warning">Active</span>
+                        	</td>
+                        <td class="text-center">
+                        	<a type="button" href="/api/textprome/engraved?text=HADIR_HMM&apikey=APIKEYMU" class="text-warning btn-sm btn-icon" rel="nofollow" target="_blank"><i class="tim-icons icon-triangle-right-17"></i></a>                          
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          Glue Text
+                        </td>
+                        <td class="text-center">
+                          GET
+                        </td>
+                        <td>
+                        	Make glue text from textprome
+                        	</td>
+                        <td class="text-center">
+                          text, apikey
+                        </td>
+                        <td>      	
+                        	<span class="badge badge-warning">Active</span>
+                        	</td>
+                        <td class="text-center">
+                        	<a type="button" href="/api/textprome/glue-text?text=HADIR_HMM&apikey=APIKEYMU" class="text-warning btn-sm btn-icon" rel="nofollow" target="_blank"><i class="tim-icons icon-triangle-right-17"></i></a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          Minios
+                        </td>
+                        <td class="text-center">
+                          GET
+                        </td>
+                        <td>
+                        	Make minios text from textprome
+                        	</td>
+                        <td class="text-center">
+                          text, apikey
+                        </td>
+                        <td>      	
+                        	<span class="badge badge-warning">Active</span>
+                        	</td>
+                        <td class="text-center">
+                        	<a type="button" href="/api/textprome/minios?text=HADIR_HMM&apikey=APIKEYMU" class="text-warning btn-sm btn-icon" rel="nofollow" target="_blank"><i class="tim-icons icon-triangle-right-17"></i></a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          PornHub
+                        </td>
+                        <td class="text-center">
+                          GET
+                        </td>
+                        <td>
+                        	Make pornhub text from textprome
+                        	</td>
+                        <td class="text-center">
+                          text, text2, apikey
+                        </td>
+                        <td>      	
+                        	<span class="badge badge-warning">Active</span>
+                        	</td>
+                        <td class="text-center">
+                        	<a type="button" href="/api/textprome/pornhub?text=HADIR&text2=HMM&apikey=APIKEYMU" class="text-warning btn-sm btn-icon" rel="nofollow" target="_blank"><i class="tim-icons icon-triangle-right-17"></i></a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          Holograpic
+                        </td>
+                        <td class="text-center">
+                          GET
+                        </td>
+                        <td>
+                        	Make holograpic text from textprome
+                        	</td>
+                        <td class="text-center">
+                          text, apikey
+                        </td>
+                        <td>      	
+                        	<span class="badge badge-warning">Active</span>
+                        	</td>
+                        <td class="text-center">
+                        	<a type="button" href="/api/textprome/holograpic?text=HADIR_HMM&apikey=APIKEYMU" class="text-warning btn-sm btn-icon" rel="nofollow" target="_blank"><i class="tim-icons icon-triangle-right-17"></i></a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          Deluxe Silver
+                        </td>
+                        <td class="text-center">
+                          GET
+                        </td>
+                        <td>
+                        	Make deluxe silver text from textprome
+                        	</td>
+                        <td class="text-center">
+                          text, apikey
+                        </td>
+                        <td>      	
+                        	<span class="badge badge-warning">Active</span>
+                        	</td>
+                        <td class="text-center">
+                        	<a type="button" href="/api/textprome/deluxe-silver?text=HADIR_HMM&apikey=APIKEYMU" class="text-warning btn-sm btn-icon" rel="nofollow" target="_blank"><i class="tim-icons icon-triangle-right-17"></i></a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          Fabric
+                        </td>
+                        <td class="text-center">
+                          GET
+                        </td>
+                        <td>
+                        	Make fabric text from textprome
+                        	</td>
+                        <td class="text-center">
+                          text, apikey
+                        </td>
+                        <td>      	
+                        	<span class="badge badge-warning">Active</span>
+                        	</td>
+                        <td class="text-center">
+                        	<a type="button" href="/api/textprome/fabric?text=HADIR_HMM&apikey=APIKEYMU" class="text-warning btn-sm btn-icon" rel="nofollow" target="_blank"><i class="tim-icons icon-triangle-right-17"></i></a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          Wicker
+                        </td>
+                        <td class="text-center">
+                          GET
+                        </td>
+                        <td>
+                        	Make wicker text from textprome
+                        	</td>
+                        <td class="text-center">
+                          text, apikey
+                        </td>
+                        <td>      	
+                        	<span class="badge badge-warning">Active</span>
+                        	</td>
+                        <td class="text-center">
+                        	<a type="button" href="/api/textprome/wicker?text=HADIR_HMM&apikey=APIKEYMU" class="text-warning btn-sm btn-icon" rel="nofollow" target="_blank"><i class="tim-icons icon-triangle-right-17"></i></a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          Larva
+                        </td>
+                        <td class="text-center">
+                          GET
+                        </td>
+                        <td>
+                        	Make larva text from textprome
+                        	</td>
+                        <td class="text-center">
+                          text, apikey
+                        </td>
+                        <td>      	
+                        	<span class="badge badge-warning">Active</span>
+                        	</td>
+                        <td class="text-center">
+                        	<a type="button" href="/api/textprome/larva?text=HADIR_HMM&apikey=APIKEYMU" class="text-warning btn-sm btn-icon" rel="nofollow" target="_blank"><i class="tim-icons icon-triangle-right-17"></i></a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          Toxic Bokeh
+                        </td>
+                        <td class="text-center">
+                          GET
+                        </td>
+                        <td>
+                        	Make toxic bokeh text from textprome
+                        	</td>
+                        <td class="text-center">
+                          text, apikey
+                        </td>
+                        <td>      	
+                        	<span class="badge badge-warning">Active</span>
+                        	</td>
+                        <td class="text-center">
+                        	<a type="button" href="/api/textprome/toxic-bokeh?text=HADIR_HMM&apikey=APIKEYMU" class="text-warning btn-sm btn-icon" rel="nofollow" target="_blank"><i class="tim-icons icon-triangle-right-17"></i></a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          Stroberi
+                        </td>
+                        <td class="text-center">
+                          GET
+                        </td>
+                        <td>
+                        	Make stroberi text from textprome
+                        	</td>
+                        <td class="text-center">
+                          text, apikey
+                        </td>
+                        <td>      	
+                        	<span class="badge badge-warning">Active</span>
+                        	</td>
+                        <td class="text-center">
+                        	<a type="button" href="/api/textprome/stroberi?text=HADIR_HMM&apikey=APIKEYMU" class="text-warning btn-sm btn-icon" rel="nofollow" target="_blank"><i class="tim-icons icon-triangle-right-17"></i></a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          Koi
+                        </td>
+                        <td class="text-center">
+                          GET
+                        </td>
+                        <td>
+                        	Make Koi text from textprome
+                        	</td>
+                        <td class="text-center">
+                          text, apikey
+                        </td>
+                        <td>      	
+                        	<span class="badge badge-warning">Active</span>
+                        	</td>
+                        <td class="text-center">
+                        	<a type="button" href="/api/textprome/koi?text=HADIR_HMM&apikey=APIKEYMU" class="text-warning btn-sm btn-icon" rel="nofollow" target="_blank"><i class="tim-icons icon-triangle-right-17"></i></a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          bread
+                        </td>
+                        <td class="text-center">
+                          GET
+                        </td>
+                        <td>
+                        	Make bread text from textprome
+                        	</td>
+                        <td class="text-center">
+                          text, apikey
+                        </td>
+                        <td>      	
+                        	<span class="badge badge-warning">Active</span>
+                        	</td>
+                        <td class="text-center">
+                        	<a type="button" href="/api/textprome/bread?text=HADIR_HMM&apikey=APIKEYMU" class="text-warning btn-sm btn-icon" rel="nofollow" target="_blank"><i class="tim-icons icon-triangle-right-17"></i></a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          Horor Blood
+                        </td>
+                        <td class="text-center">
+                          GET
+                        </td>
+                        <td>
+                        	Make horor blood text from textprome
+                        	</td>
+                        <td class="text-center">
+                          text, apikey
+                        </td>
+                        <td>      	
+                        	<span class="badge badge-warning">Active</span>
+                        	</td>
+                        <td class="text-center">
+                        	<a type="button" href="/api/textprome/horor-blood?text=HADIR_HMM&apikey=APIKEYMU" class="text-warning btn-sm btn-icon" rel="nofollow" target="_blank"><i class="tim-icons icon-triangle-right-17"></i></a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          Honey
+                        </td>
+                        <td class="text-center">
+                          GET
+                        </td>
+                        <td>
+                        	Make honey text from textprome
+                        	</td>
+                        <td class="text-center">
+                          text, apikey
+                        </td>
+                        <td>      	
+                        	<span class="badge badge-warning">Active</span>
+                        	</td>
+                        <td class="text-center">
+                        	<a type="button" href="/api/textprome/honey?text=HADIR_HMM&apikey=APIKEYMU" class="text-warning btn-sm btn-icon" rel="nofollow" target="_blank"><i class="tim-icons icon-triangle-right-17"></i></a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          Ice
+                        </td>
+                        <td class="text-center">
+                          GET
+                        </td>
+                        <td>
+                        	Make ice text from textprome
+                        	</td>
+                        <td class="text-center">
+                          text, apikey
+                        </td>
+                        <td>      	
+                        	<span class="badge badge-warning">Active</span>
+                        	</td>
+                        <td class="text-center">
+                        	<a type="button" href="/api/textprome/ice?text=HADIR_HMM&apikey=APIKEYMU" class="text-warning btn-sm btn-icon" rel="nofollow" target="_blank"><i class="tim-icons icon-triangle-right-17"></i></a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          Rusty
+                        </td>
+                        <td class="text-center">
+                          GET
+                        </td>
+                        <td>
+                        	Make rusty text from textprome
+                        	</td>
+                        <td class="text-center">
+                          text, apikey
+                        </td>
+                        <td>      	
+                        	<span class="badge badge-warning">Active</span>
+                        	</td>
+                        <td class="text-center">
+                        	<a type="button" href="/api/textprome/rusty?text=HADIR_HMM&apikey=APIKEYMU" class="text-warning btn-sm btn-icon" rel="nofollow" target="_blank"><i class="tim-icons icon-triangle-right-17"></i></a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          3dstone
+                        </td>
+                        <td class="text-center">
+                          GET
+                        </td>
+                        <td>
+                        	Make 3dstone text from textprome
+                        	</td>
+                        <td class="text-center">
+                          text, apikey
+                        </td>
+                        <td>      	
+                        	<span class="badge badge-warning">Active</span>
+                        	</td>
+                        <td class="text-center">
+                        	<a type="button" href="/api/textprome/3dstone?text=HADIR_HMM&apikey=APIKEYMU" class="text-warning btn-sm btn-icon" rel="nofollow" target="_blank"><i class="tim-icons icon-triangle-right-17"></i></a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          1917
+                        </td>
+                        <td class="text-center">
+                          GET
+                        </td>
+                        <td>
+                        	Make 1917 text from textprome
+                        	</td>
+                        <td class="text-center">
+                          text, apikey
+                        </td>
+                        <td>      	
+                        	<span class="badge badge-warning">Active</span>
+                        	</td>
+                        <td class="text-center">
+                        	<a type="button" href="/api/textprome/1917?text=HADIR_HMM&apikey=APIKEYMU" class="text-warning btn-sm btn-icon" rel="nofollow" target="_blank"><i class="tim-icons icon-triangle-right-17"></i></a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          Thunder2
+                        </td>
+                        <td class="text-center">
+                          GET
+                        </td>
+                        <td>
+                        	Make thunder2 text from textprome
+                        	</td>
+                        <td class="text-center">
+                          text, apikey
+                        </td>
+                        <td>      	
+                        	<span class="badge badge-warning">Active</span>
+                        	</td>
+                        <td class="text-center">
+                        	<a type="button" href="/api/textprome/thunder2?text=HADIR_HMM&apikey=APIKEYMU" class="text-warning btn-sm btn-icon" rel="nofollow" target="_blank"><i class="tim-icons icon-triangle-right-17"></i></a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          Space
+                        </td>
+                        <td class="text-center">
+                          GET
+                        </td>
+                        <td>
+                        	Make space text from textprome
+                        	</td>
+                        <td class="text-center">
+                          text, text2, apikey
+                        </td>
+                        <td>      	
+                        	<span class="badge badge-warning">Active</span>
+                        	</td>
+                        <td class="text-center">
+                        	<a type="button" href="/api/textprome/space?text=HADIR&text2=HMM&apikey=APIKEYMU" class="text-warning btn-sm btn-icon" rel="nofollow" target="_blank"><i class="tim-icons icon-triangle-right-17"></i></a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          Joker Logo
+                        </td>
+                        <td class="text-center">
+                          GET
+                        </td>
+                        <td>
+                        	Make joker logo text from textprome
+                        	</td>
+                        <td class="text-center">
+                          text, apikey
+                        </td>
+                        <td>      	
+                        	<span class="badge badge-warning">Active</span>
+                        	</td>
+                        <td class="text-center">
+                        	<a type="button" href="/api/textprome/joker-logo?text=HADIR_HMM&apikey=APIKEYMU" class="text-warning btn-sm btn-icon" rel="nofollow" target="_blank"><i class="tim-icons icon-triangle-right-17"></i></a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          Hallowen
+                        </td>
+                        <td class="text-center">
+                          GET
+                        </td>
+                        <td>
+                        	Make hallowen text from textprome
+                        	</td>
+                        <td class="text-center">
+                          text, apikey
+                        </td>
+                        <td>      	
+                        	<span class="badge badge-warning">Active</span>
+                        	</td>
+                        <td class="text-center">
+                        	<a type="button" href="/api/textprome/hallowen?text=HADIR_HMM&apikey=APIKEYMU" class="text-warning btn-sm btn-icon" rel="nofollow" target="_blank"><i class="tim-icons icon-triangle-right-17"></i></a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          Blood
+                        </td>
+                        <td class="text-center">
+                          GET
+                        </td>
+                        <td>
+                        	Make blood text from textprome
+                        	</td>
+                        <td class="text-center">
+                          text, apikey
+                        </td>
+                        <td>      	
+                        	<span class="badge badge-warning">Active</span>
+                        	</td>
+                        <td class="text-center">
+                        	<a type="button" href="/api/textprome/blood?text=HADIR_HMM&apikey=APIKEYMU" class="text-warning btn-sm btn-icon" rel="nofollow" target="_blank"><i class="tim-icons icon-triangle-right-17"></i></a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          Astone
+                        </td>
+                        <td class="text-center">
+                          GET
+                        </td>
+                        <td>
+                        	Make astone text from textprome
+                        	</td>
+                        <td class="text-center">
+                          text, text2, apikey
+                        </td>
+                        <td>      	
+                        	<span class="badge badge-warning">Active</span>
+                        	</td>
+                        <td class="text-center">
+                        	<a type="button" href="/api/textprome/astone?text=HADIR&text2=HMM&apikey=APIKEYMU" class="text-warning btn-sm btn-icon" rel="nofollow" target="_blank"><i class="tim-icons icon-triangle-right-17"></i></a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          Grafity Text
+                        </td>
+                        <td class="text-center">
+                          GET
+                        </td>
+                        <td>
+                        	Make grafity text from textprome
+                        	</td>
+                        <td class="text-center">
+                          text, apikey
+                        </td>
+                        <td>      	
+                        	<span class="badge badge-warning">Active</span>
+                        	</td>
+                        <td class="text-center">
+                        	<a type="button" href="/api/textprome/grafity-text?text=HADIR_HMM&apikey=APIKEYMU" class="text-warning btn-sm btn-icon" rel="nofollow" target="_blank"><i class="tim-icons icon-triangle-right-17"></i></a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          grafity text2
+                        </td>
+                        <td class="text-center">
+                          GET
+                        </td>
+                        <td>
+                        	Make grafity2 text from textprome
+                        	</td>
+                        <td class="text-center">
+                          text, text2, apikey
+                        </td>
+                        <td>      	
+                        	<span class="badge badge-warning">Active</span>
+                        	</td>
+                        <td class="text-center">
+                        	<a type="button" href="/api/textprome/grafity-text2?text=HADIR&text2=HMM&apikey=APIKEYMU" class="text-warning btn-sm btn-icon" rel="nofollow" target="_blank"><i class="tim-icons icon-triangle-right-17"></i></a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          Ninja Logo
+                        </td>
+                        <td class="text-center">
+                          GET
+                        </td>
+                        <td>
+                        	Make ninja logo text from textprome
+                        	</td>
+                        <td class="text-center">
+                          text, text2, apikey
+                        </td>
+                        <td>      	
+                        	<span class="badge badge-warning">Active</span>
+                        	</td>
+                        <td class="text-center">
+                        	<a type="button" href="/api/textprome/ninja-logo?text=HADIR&text2=HMM&apikey=APIKEYMU" class="text-warning btn-sm btn-icon" rel="nofollow" target="_blank"><i class="tim-icons icon-triangle-right-17"></i></a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          Lion Logo
+                        </td>
+                        <td class="text-center">
+                          GET
+                        </td>
+                        <td>
+                        	Make lion logo text from textprome
+                        	</td>
+                        <td class="text-center">
+                          text, text2, apikey
+                        </td>
+                        <td>      	
+                        	<span class="badge badge-warning">Active</span>
+                        	</td>
+                        <td class="text-center">
+                        	<a type="button" href="/api/textprome/lion-logo?text=HADIR&text2=HMM&apikey=APIKEYMU" class="text-warning btn-sm btn-icon" rel="nofollow" target="_blank"><i class="tim-icons icon-triangle-right-17"></i></a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          Avengers Logo
+                        </td>
+                        <td class="text-center">
+                          GET
+                        </td>
+                        <td>
+                        	Make avengers logo text from textprome
+                        	</td>
+                        <td class="text-center">
+                          text, text2, apikey
+                        </td>
+                        <td>      	
+                        	<span class="badge badge-warning">Active</span>
+                        	</td>
+                        <td class="text-center">
+                        	<a type="button" href="/api/textprome/avengers-logo?text=HADIR&text2=HMM&apikey=APIKEYMU" class="text-warning btn-sm btn-icon" rel="nofollow" target="_blank"><i class="tim-icons icon-triangle-right-17"></i></a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          Marvel Logo
+                        </td>
+                        <td class="text-center">
+                          GET
+                        </td>
+                        <td>
+                        	Make marvel logo text from textprome
+                        	</td>
+                        <td class="text-center">
+                          text, text2, apikey
+                        </td>
+                        <td>      	
+                        	<span class="badge badge-warning">Active</span>
+                        	</td>
+                        <td class="text-center">
+                        	<a type="button" href="/api/textprome/marvel-logo?text=HADIR&text2=HMM&apikey=APIKEYMU" class="text-warning btn-sm btn-icon" rel="nofollow" target="_blank"><i class="tim-icons icon-triangle-right-17"></i></a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          Marvel Logo2
+                        </td>
+                        <td class="text-center">
+                          GET
+                        </td>
+                        <td>
+                        	Make marvel logo2 text from textprome
+                        	</td>
+                        <td class="text-center">
+                          text, text2, apikey
+                        </td>
+                        <td>      	
+                        	<span class="badge badge-warning">Active</span>
+                        	</td>
+                        <td class="text-center">
+                        	<a type="button" href="/api/textprome/marvel-logo2?text=HADIR&text2=HMM&apikey=APIKEYMU" class="text-warning btn-sm btn-icon" rel="nofollow" target="_blank"><i class="tim-icons icon-triangle-right-17"></i></a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          Glitch
+                        </td>
+                        <td class="text-center">
+                          GET
+                        </td>
+                        <td>
+                        	Make glitch text from textprome
+                        	</td>
+                        <td class="text-center">
+                          text, text2, apikey
+                        </td>
+                        <td>      	
+                        	<span class="badge badge-warning">Active</span>
+                        	</td>
+                        <td class="text-center">
+                        	<a type="button" href="/api/textprome/glitch?text=HADIR&text2=HMM&apikey=APIKEYMU" class="text-warning btn-sm btn-icon" rel="nofollow" target="_blank"><i class="tim-icons icon-triangle-right-17"></i></a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          Logo Wolf3
+                        </td>
+                        <td class="text-center">
+                          GET
+                        </td>
+                        <td>
+                        	Make logo wolf3 text from textprome
+                        	</td>
+                        <td class="text-center">
+                          text, text2, apikey
+                        </td>
+                        <td>      	
+                        	<span class="badge badge-warning">Active</span>
+                        	</td>
+                        <td class="text-center">
+                        	<a type="button" href="/api/textprome/logo-wolf3?text=HADIR&text2=HMM&apikey=APIKEYMU" class="text-warning btn-sm btn-icon" rel="nofollow" target="_blank"><i class="tim-icons icon-triangle-right-17"></i></a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          Logo Wolf4
+                        </td>
+                        <td class="text-center">
+                          GET
+                        </td>
+                        <td>
+                        	Make logo wolf4 text from textprome
+                        	</td>
+                        <td class="text-center">
+                          text, text2, apikey
+                        </td>
+                        <td>      	
+                        	<span class="badge badge-warning">Active</span>
+                        	</td>
+                        <td class="text-center">
+                        	<a type="button" href="/api/textprome/logo-wolf4?text=HADIR&text2=HMM&apikey=APIKEYMU" class="text-warning btn-sm btn-icon" rel="nofollow" target="_blank"><i class="tim-icons icon-triangle-right-17"></i></a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          Thunder
+                        </td>
+                        <td class="text-center">
+                          GET
+                        </td>
+                        <td>
+                        	Make thunder text from textprome
+                        	</td>
+                        <td class="text-center">
+                          text, text2, apikey
+                        </td>
+                        <td>      	
+                        	<span class="badge badge-warning">Active</span>
+                        	</td>
+                        <td class="text-center">
+                        	<a type="button" href="/api/textprome/thunder?text=HADIR&text2=HMM&apikey=APIKEYMU" class="text-warning btn-sm btn-icon" rel="nofollow" target="_blank"><i class="tim-icons icon-triangle-right-17"></i></a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          Black Pink
+                        </td>
+                        <td class="text-center">
+                          GET
+                        </td>
+                        <td>
+                        	Make black pink text from textprome
+                        	</td>
+                        <td class="text-center">
+                          text, apikey
+                        </td>
+                        <td>      	
+                        	<span class="badge badge-warning">Active</span>
+                        	</td>
+                        <td class="text-center">
+                        	<a type="button" href="/api/textprome/black-pink?text=HADIR_HMM&apikey=APIKEYMU" class="text-warning btn-sm btn-icon" rel="nofollow" target="_blank"><i class="tim-icons icon-triangle-right-17"></i></a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          Drop Water
+                        </td>
+                        <td class="text-center">
+                          GET
+                        </td>
+                        <td>
+                        	Make drop water text from textprome
+                        	</td>
+                        <td class="text-center">
+                          text, apikey
+                        </td>
+                        <td>      	
+                        	<span class="badge badge-warning">Active</span>
+                        	</td>
+                        <td class="text-center">
+                        	<a type="button" href="/api/textprome/drop-water?text=HADIR_HMM&apikey=APIKEYMU" class="text-warning btn-sm btn-icon" rel="nofollow" target="_blank"><i class="tim-icons icon-triangle-right-17"></i></a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          Christmas
+                        </td>
+                        <td class="text-center">
+                          GET
+                        </td>
+                        <td>
+                        	Make christmas text from textprome
+                        	</td>
+                        <td class="text-center">
+                          text, apikey
+                        </td>
+                        <td>      	
+                        	<span class="badge badge-warning">Active</span>
+                        	</td>
+                        <td class="text-center">
+                        	<a type="button" href="/api/textprome/christmas?text=HADIR_HMM&apikey=APIKEYMU" class="text-warning btn-sm btn-icon" rel="nofollow" target="_blank"><i class="tim-icons icon-triangle-right-17"></i></a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          3d Gradient
+                        </td>
+                        <td class="text-center">
+                          GET
+                        </td>
+                        <td>
+                        	Make 3d gradient text from textprome
+                        	</td>
+                        <td class="text-center">
+                          text, apikey
+                        </td>
+                        <td>      	
+                        	<span class="badge badge-warning">Active</span>
+                        	</td>
+                        <td class="text-center">
+                        	<a type="button" href="/api/textprome/3d-gradient?text=HADIR_HMM&apikey=APIKEYMU" class="text-warning btn-sm btn-icon" rel="nofollow" target="_blank"><i class="tim-icons icon-triangle-right-17"></i></a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          Captain
+                        </td>
+                        <td class="text-center">
+                          GET
+                        </td>
+                        <td>
+                        	Make captain text from textprome
+                        	</td>
+                        <td class="text-center">
+                          text, text2, apikey
+                        </td>
+                        <td>      	
+                        	<span class="badge badge-warning">Active</span>
+                        	</td>
+                        <td class="text-center">
+                        	<a type="button" href="/api/textprome/captain?text=HADIR&text2=HMM&apikey=APIKEYMU" class="text-warning btn-sm btn-icon" rel="nofollow" target="_blank"><i class="tim-icons icon-triangle-right-17"></i></a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                     3d Sci Fi
+                        </td>
+                        <td class="text-center">
+                          GET
+                        </td>
+                        <td>
+                        	Make 3d sci fi text from textprome
+                        	</td>
+                        <td class="text-center">
+                          text, apikey
+                        </td>
+                        <td>      	
+                        	<span class="badge badge-warning">Active</span>
+                        	</td>
+                        <td class="text-center">
+                        	<a type="button" href="/api/textprome/3d-sci-fi?text=HADIR_HMM&apikey=APIKEYMU" class="text-warning btn-sm btn-icon" rel="nofollow" target="_blank"><i class="tim-icons icon-triangle-right-17"></i></a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                         glitch text effects
+                        </td>
+                        <td class="text-center">
+                          GET
+                        </td>
+                        <td>
+                        	Make glitch text effects from textprome
+                        	</td>
+                        <td class="text-center">
+                          text, apikey
+                        </td>
+                        <td>      	
+                        	<span class="badge badge-warning">Active</span>
+                        	</td>
+                        <td class="text-center">
+                        	<a type="button" href="/api/textprome/textprome/glitch-text-effects?text=HADIR_HMM&apikey=APIKEYMU" class="text-warning btn-sm btn-icon" rel="nofollow" target="_blank"><i class="tim-icons icon-triangle-right-17"></i></a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          Glitch Tik Tok
+                        </td>
+                        <td class="text-center">
+                          GET
+                        </td>
+                        <td>
+                        	Make glitch tik tok text from textprome
+                        	</td>
+                        <td class="text-center">
+                          text, text2, apikey
+                        </td>
+                        <td>      	
+                        	<span class="badge badge-warning">Active</span>
+                        	</td>
+                        <td class="text-center">
+                        	<a type="button" href="/api/textprome/glitch-tik-tok?text=HADIR&text2=HMM&apikey=APIKEYMU" class="text-warning btn-sm btn-icon" rel="nofollow" target="_blank"><i class="tim-icons icon-triangle-right-17"></i></a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          Neon Light2
+                        </td>
+                        <td class="text-center">
+                          GET
+                        </td>
+                        <td>
+                        	Make neon ight22 text from textprome
+                        	</td>
+                        <td class="text-center">
+                          text, apikey
+                        </td>
+                        <td>      	
+                        	<span class="badge badge-warning">Active</span>
+                        	</td>
+                        <td class="text-center">
+                        	<a type="button" href="/api/textprome/neon-light2?text=HADIR_HMM&apikey=APIKEYMU" class="text-warning btn-sm btn-icon" rel="nofollow" target="_blank"><i class="tim-icons icon-triangle-right-17"></i></a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          Eroded Metal
+                        </td>
+                        <td class="text-center">
+                          GET
+                        </td>
+                        <td>
+                        	Make eroded metal text from textprome
+                        	</td>
+                        <td class="text-center">
+                          text, apikey
+                        </td>
+                        <td>      	
+                        	<span class="badge badge-warning">Active</span>
+                        	</td>
+                        <td class="text-center">
+                        	<a type="button" href="/api/textprome/eroded-metal?text=HADIR_HMM&apikey=APIKEYMU" class="text-warning btn-sm btn-icon" rel="nofollow" target="_blank"><i class="tim-icons icon-triangle-right-17"></i></a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          Pencil Text
+                        </td>
+                        <td class="text-center">
+                          GET
+                        </td>
+                        <td>
+                        	Make pencil text from textprome
+                        	</td>
+                        <td class="text-center">
+                          text, apikey
+                        </td>
+                        <td>      	
+                        	<span class="badge badge-warning">Active</span>
+                        	</td>
+                        <td class="text-center">
+                        	<a type="button" href="/api/textprome/sketch-text?text=HADIR_HMM&apikey=APIKEYMU" class="text-warning btn-sm btn-icon" rel="nofollow" target="_blank"><i class="tim-icons icon-triangle-right-17"></i></a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          Green Horror
+                        </td>
+                        <td class="text-center">
+                          GET
+                        </td>
+                        <td>
+                        	Make green horror text from textprome
+                        	</td>
+                        <td class="text-center">
+                          text, apikey
+                        </td>
+                        <td>      	
+                        	<span class="badge badge-warning">Active</span>
+                        	</td>
+                        <td class="text-center">
+                        	<a type="button" href="/api/textprome/green-horror?text=HADIR_HMM&apikey=APIKEYMU" class="text-warning btn-sm btn-icon" rel="nofollow" target="_blank"><i class="tim-icons icon-triangle-right-17"></i></a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          Embossed
+                        </td>
+                        <td class="text-center">
+                          GET
+                        </td>
+                        <td>
+                        	Make embossed text from textprome
+                        	</td>
+                        <td class="text-center">
+                          text, apikey
+                        </td>
+                        <td>      	
+                        	<span class="badge badge-warning">Active</span>
+                        	</td>
+                        <td class="text-center">
+                        	<a type="button" href="/api/textprome/embossed?text=HADIR_HMM&apikey=APIKEYMU" class="text-warning btn-sm btn-icon" rel="nofollow" target="_blank"><i class="tim-icons icon-triangle-right-17"></i></a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          Blue Circuit
+                        </td>
+                        <td class="text-center">
+                          GET
+                        </td>
+                        <td>
+                        	Make blue circuit text from textprome
+                        	</td>
+                        <td class="text-center">
+                          text, apikey
+                        </td>
+                        <td>      	
+                        	<span class="badge badge-warning">Active</span>
+                        	</td>
+                        <td class="text-center">
+                        	<a type="button" href="/api/textprome/blue-circuit?text=HADIR_HMM&apikey=APIKEYMU" class="text-warning btn-sm btn-icon" rel="nofollow" target="_blank"><i class="tim-icons icon-triangle-right-17"></i></a>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+            
+          </div>
+        </div>
+     
+        
+          </div>
+   
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+  <!--   Core JS Files   -->
+  <script src="../assets/js/core/jquery.min.js"></script>
+  <script src="../assets/js/core/popper.min.js"></script>
+  <script src="../assets/js/core/bootstrap.min.js"></script>
+  <script src="../assets/js/plugins/perfect-scrollbar.jquery.min.js"></script>
+  <!--  Google Maps Plugin    -->
+  <!-- Place this tag in your head or just before your close body tag. -->
+  <!-- Chart JS -->
+  <script src="../assets/js/plugins/chartjs.min.js"></script>
+  <!--  Notifications Plugin    -->
+  <script src="../assets/js/plugins/bootstrap-notify.js"></script>
+  <!-- Control Center for Black Dashboard: parallax effects, scripts for the example pages etc -->
+  <script src="../assets/js/black-dashboard.min.js?v=1.0.0"></script><!-- Black Dashboard DEMO methods, don't include it in your project! -->
+
+  <script src="https://cdn.trackjs.com/agent/v3/latest/t.js"></script>
+  <script>
+    window.TrackJS &&
+      TrackJS.install({
+        token: "ee6fab19c5a04ac1a32a645abde4613a",
+        application: "black-dashboard-free"
+      });
+  </script>
+  <script> 
+  	$.getJSON("https://api.countapi.xyz/hit/myhuman.herokuapp.com/visits",
+	function(data) {
+	$("#visitor").html(data.value);
+	})
+	</script>
+	<script>
+		
+		$.getJSON("https://api.ipify.org?format=json",
+		function(data) {
+			$("#ipaddres").html(data.ip)
+			})
+			</script>
+</body>
+
+</html>
